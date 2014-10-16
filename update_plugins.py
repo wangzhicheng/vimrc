@@ -8,6 +8,7 @@ from os import path
 
 #--- Globals ----------------------------------------------
 PLUGINS = """
+python-mode https://github.com/klen/python-mode
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/corntrace/bufexplorer
 ctrlp.vim https://github.com/kien/ctrlp.vim
