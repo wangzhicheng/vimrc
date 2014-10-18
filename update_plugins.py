@@ -18,7 +18,6 @@ nginx.vim https://github.com/vim-scripts/nginx.vim
 open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 taglist.vim https://github.com/vim-scripts/taglist.vim
-tlib https://github.com/vim-scripts/tlib
 vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
 vim-coffee-script https://github.com/kchmck/vim-coffee-script
@@ -41,6 +40,7 @@ vim-repeat https://github.com/tpope/vim-repeat
 vim-commentary https://github.com/tpope/vim-commentary
 vim-golang https://github.com/jnwhiteh/vim-golang
 """.strip()
+# tlib https://github.com/tomtom/tlib_vim
 
 GITHUB_ZIP = '%s/archive/master.zip'
 
