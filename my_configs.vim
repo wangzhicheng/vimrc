@@ -26,6 +26,11 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
  
+" input mode completion
+inoremap ^] ^X^]    " complete from tags
+inoremap ^F ^X^F    " complete filename
+inoremap ^D ^X^D    " complete definition or macros
+inoremap ^L ^X^L    " complete line
 
 augroup filetypedetect
     au! BufRead,BufNewFile *.frm,*.bas,*.vb setfiletype vb
