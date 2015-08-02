@@ -1,4 +1,4 @@
-"" çŠ¶æ€æ å„ä¸ªçŠ¶æ€
+"" ×´Ì¬À¸¸÷¸ö×´Ì¬
 let statusHead ="%-.50f\ %h%m%r"
 let statusBreakPoint ="%<"
 let statusSeparator ="|"
@@ -13,7 +13,7 @@ let statusKeymap ="%k"
 let statusRuler ="%-12.(%lL,%c%VC%)\ %P"
 let statusTime ="%{strftime(\"%y-%m-%d\",getftime(expand(\"%\")))}"
 let statusEnd=statusKeymap."\ ".statusEncoding.statusRuler."\ ".statusTime
-"" æœ€ç»ˆçŠ¶æ€æ çš„æ¨¡å¼å­—ç¬¦ä¸²
+"" ×îÖÕ×´Ì¬À¸µÄÄ£Ê½×Ö·û´®
 let statusString=statusHead.statusBody.statusBlank.statusEnd
 set statusline=%!statusString 
 
@@ -37,7 +37,7 @@ augroup filetypedetect
     au BufNewFile,BufRead *.wgetrc,wgetrc  setf wget
 augroup end
 
-" åœ¨windowsä¸‹çš„ç¼–ç è®¾ç½®
+" ÔÚwindowsÏÂµÄ±àÂëÉèÖÃ
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 if has("win32")
@@ -45,13 +45,12 @@ if has("win32")
 else
     set fileencoding=utf-8
 endif
-"è§£å†³èœå•ä¹±ç 
+"½â¾ö²Ëµ¥ÂÒÂë
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-"è§£å†³consoleè¾“å‡ºä¹±ç 
+"½â¾öconsoleÊä³öÂÒÂë
 language message zh_CN.utf-8
 
-nremap <leader>e :e ~\.vim_runtime\my_config.vim
 
 " uppercase the WORD just before the cursor
 
@@ -63,4 +62,7 @@ iabbrev ccopy Copyright 2014 WANG Zhicheng, all rights reserved.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-
+" 02/08/15 08:57:51
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1
