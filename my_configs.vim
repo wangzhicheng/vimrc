@@ -1,31 +1,13 @@
-"" 状态栏各个状态
-let statusHead ="%-.50f\ %h%m%r"
-let statusBreakPoint ="%<"
-let statusSeparator ="|"
-let statusFileType ="%{((&ft\ ==\ \"help\"\ \|\|\ &ft\ ==\ \"\")?\"\":\"[\".&ft.\"]\")}"
-let statusFileFormat ="[%{(&ff\ ==\ \"unix\")?\"u\":\"d\"}]"
-let statusAscii ="\{%b:0x%B\}"
-let statusCwd ="%-.50{getcwd()}"
-let statusBody =statusFileType.statusFileFormat.statusSeparator.statusAscii.statusSeparator."\ ".statusBreakPoint.statusCwd
-let statusEncoding ="[%{(&fenc\ ==\ \"\"?&enc:&fenc).(&bomb?\",BOM\":\"\")}]"
-let statusBlank ="%="
-let statusKeymap ="%k"
-let statusRuler ="%-12.(%lL,%c%VC%)\ %P"
-let statusTime ="%{strftime(\"%y-%m-%d\",getftime(expand(\"%\")))}"
-let statusEnd=statusKeymap."\ ".statusEncoding.statusRuler."\ ".statusTime
-"" 最终状态栏的模式字符串
-let statusString=statusHead.statusBody.statusBlank.statusEnd
-set statusline=%!statusString 
+" Relative number
+set relativenumber
+set number
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=m
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
- 
+" Enable autocompletion
+set wildmode=longest,list,full
+
+" Split open at the bottom and right
+set splitright splitbelow 
+
 " input mode completion
 inoremap ^] ^X^]    " complete from tags
 inoremap ^F ^X^F    " complete filename
@@ -45,24 +27,27 @@ if has("win32")
 else
     set fileencoding=utf-8
 endif
-"解决菜单乱码
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-"解决console输出乱码
-language message zh_CN.utf-8
-
 
 " uppercase the WORD just before the cursor
-
 imap <c-u> <esc>gUiWea
 iabbrev @@ wangzhicheng.thu@gmail.com
-iabbrev ccopy Copyright 2014 WANG Zhicheng, all rights reserved.
 
-" open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cucumbertables.vim
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
-" 02/08/15 08:57:51
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_auto_select = 1
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1     " l means left align; 1 means one space of padding.
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+" fuzzy deep directory search
+set path+=**
+
+set complete+=kspell

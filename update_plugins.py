@@ -12,6 +12,8 @@ python-mode https://github.com/klen/python-mode
 ack.vim https://github.com/mileszs/ack.vim
 bufexplorer https://github.com/corntrace/bufexplorer
 ctrlp.vim https://github.com/kien/ctrlp.vim
+https://github.com/davidhalter/jedi
+https://github.com/godlygeek/tabular
 mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/scrooloose/nerdtree
 nginx.vim https://github.com/vim-scripts/nginx.vim
@@ -38,7 +40,6 @@ vim-zenroom2 https://github.com/amix/vim-zenroom2
 syntastic https://github.com/scrooloose/syntastic
 vim-repeat https://github.com/tpope/vim-repeat
 vim-commentary https://github.com/tpope/vim-commentary
-vim-golang https://github.com/jnwhiteh/vim-golang
 """.strip()
 # tlib https://github.com/tomtom/tlib_vim
 

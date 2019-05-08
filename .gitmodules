@@ -1,0 +1,39 @@
+[submodule "sources_non_forked/LanguageClient-neovim"]
+	path = sources_non_forked/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "sources_non_forked/ale"]
+	path = sources_non_forked/ale
+	url = https://github.com/w0rp/ale
+[submodule "sources_non_forked/deoplete.nvim"]
+	path = sources_non_forked/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "sources_non_forked/ghcmod-vim"]
+	path = sources_non_forked/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "sources_non_forked/haskell-vim"]
+	path = sources_non_forked/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim
+[submodule "sources_non_forked/neco-ghc"]
+	path = sources_non_forked/neco-ghc
+	url = https://github.com/eagletmt/neco-ghc
+[submodule "sources_non_forked/nvim-yarp"]
+	path = sources_non_forked/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule "sources_non_forked/tabular"]
+	path = sources_non_forked/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "sources_non_forked/tagbar"]
+	path = sources_non_forked/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "sources_non_forked/vim-airline-themes"]
+	path = sources_non_forked/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "sources_non_forked/vim-hug-neovim-rpc"]
+	path = sources_non_forked/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "sources_non_forked/vim-stylishask"]
+	path = sources_non_forked/vim-stylishask
+	url = https://github.com/alx741/vim-stylishask
+[submodule "sources_non_forked/vimproc.vim"]
+	path = sources_non_forked/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
