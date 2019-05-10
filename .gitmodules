@@ -37,3 +37,15 @@
 [submodule "sources_non_forked/vimproc.vim"]
 	path = sources_non_forked/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
+[submodule "sources_non_forked/hlint-refactor-vim"]
+	path = sources_non_forked/hlint-refactor-vim
+	url = https://github.com/mpickering/hlint-refactor-vim.git
+[submodule "sources_non_forked/vim-tmux-navigator"]
+	path = sources_non_forked/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "sources_non_forked/vimux"]
+	path = sources_non_forked/vimux
+	url = https://github.com/benmills/vimux.git
+[submodule "sources_non_forked/vim-buftabline"]
+	path = sources_non_forked/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git

@@ -2,6 +2,9 @@
 set relativenumber
 set number
 
+" never show tabline 
+set showtabline=0
+
 " Enable autocompletion
 set wildmode=longest,list,full
 
@@ -19,7 +22,7 @@ augroup filetypedetect
     au BufNewFile,BufRead *.wgetrc,wgetrc  setf wget
 augroup end
 
-" ÔÚwindowsÏÂµÄ±àÂëÉèÖÃ
+" åœ¨windowsä¸‹çš„ç¼–ç è®¾ç½®
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 if has("win32")
@@ -51,3 +54,36 @@ endfunction
 set path+=**
 
 set complete+=kspell
+
+
+" toggle colors to optimize based on light or dark background
+nnoremap <leader>cs :call ToggleLightDark()<CR>
+
+function! Light()
+    echom "set bg=light"
+    set bg=light
+    colorscheme morning
+    set list
+endfunction
+
+function! Dark()
+    echom "set bg=dark"
+    set bg=dark
+    colorscheme desert
+    set nolist
+endfunction
+
+function! ToggleLightDark()
+  if &bg ==# "light"
+    call Dark()
+  else
+    call Light()
+  endif
+endfunction
+
+" Set split separator to Unicode box drawing character
+set encoding=utf8
+set fillchars=vert:â”‚
+
+" Override color scheme to make split the same color as tmux's default
+autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE

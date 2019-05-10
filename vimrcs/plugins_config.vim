@@ -58,7 +58,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': '',
   \ }
-let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+if has('win32')
+ let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+endif
 
 
 """"""""""""""""""""""""""""""
@@ -217,3 +219,12 @@ let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 " Use deoplete.
 let g:python3_host_prog = '/usr/bin/python3'  " python 3.6, same version vim was built
 let g:deoplete#enable_at_startup = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" hlint refactor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:hlintRefactor#disableDefaultKeybindings = 1
+
+nnoremap <silent> <Leader>to :call ApplyOneSuggestion()<CR>
+nnoremap <silent> <leader>ta :call ApplyAllSuggestions()<CR>
