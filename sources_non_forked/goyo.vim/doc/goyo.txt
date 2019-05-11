@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 *goyo.txt*	goyo	Last change: April 2 2017
+=======
+goyo.txt	goyo	Last change: April 2 2017
+>>>>>>> upstream/master
 GOYO - TABLE OF CONTENTS                                         *goyo* *goyo-toc*
 ==============================================================================
 
